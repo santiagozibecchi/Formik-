@@ -18,9 +18,9 @@ const FormikBasicPage = () => {
       }
 
       if (!lastName) {
-         errors.firstName = "Required";
-      } else if (firstName.length >= 10) {
-         errors.firstName = "Must be 10 characters or less";
+         errors.lastName = "Required";
+      } else if (lastName.length >= 10) {
+         errors.lastName = "Must be 10 characters or less";
       }
 
       if (!email) {
@@ -32,17 +32,18 @@ const FormikBasicPage = () => {
       return errors;
    };
 
-   const { handleChange, values, handleSubmit } = useFormik({
-      initialValues: {
-         firstName: "Santiago",
-         lastName: "",
-         email: "",
-      },
-      onSubmit: (values) => {
-         console.log(values);
-      },
-      validate,
-   });
+   const { handleChange, values, handleSubmit, errors, touched, handleBlur } =
+      useFormik({
+         initialValues: {
+            firstName: "",
+            lastName: "",
+            email: "",
+         },
+         onSubmit: (values) => {
+            console.log(values);
+         },
+         validate,
+      });
 
    return (
       <div>
@@ -52,29 +53,35 @@ const FormikBasicPage = () => {
             <input
                onChange={handleChange}
                type="text"
+               onBlur={handleBlur}
                name="firstName"
                value={values.firstName}
             />
-            <span>First Name is required</span>
+            {touched.firstName && errors.firstName && (
+               <span>{errors.firstName}</span>
+            )}
 
             <label htmlFor="lastName">Last Name</label>
             <input
                onChange={handleChange}
                type="text"
+               onBlur={handleBlur}
                name="lastName"
                value={values.lastName}
             />
-            <span>Last Name is required</span>
+            {touched.lastName && errors.lastName && (
+               <span>{errors.lastName}</span>
+            )}
 
             <label htmlFor="email">Email</label>
             <input
                onChange={handleChange}
                type="email"
+               onBlur={handleBlur}
                name="email"
                value={values.email}
             />
-            <span>Email is required</span>
-            <span>Check email</span>
+            {touched.email && errors.email && <span>{errors.email}</span>}
 
             <button type="submit">Submit</button>
          </form>
