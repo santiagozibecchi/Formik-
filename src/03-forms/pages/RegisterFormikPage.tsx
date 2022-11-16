@@ -26,7 +26,7 @@ export const RegisterFormikPage = () => {
 
    return (
       <div>
-         <h1>Register Formik Page</h1>
+         <h1>Register Page</h1>
 
          <form onSubmit={handleSubmit} noValidate>
             <input
