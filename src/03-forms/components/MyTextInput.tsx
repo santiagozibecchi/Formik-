@@ -8,7 +8,7 @@ interface Props {
    [x: string]: any;
 }
 
-const MyTextInput = ({ label, ...props }: Props) => {
+export const MyTextInput = ({ label, ...props }: Props) => {
    // useField() tiene acceso al context para leer todos los datos que estoy pasando al componente Formik
    const [field, meta] = useField(props);
 
@@ -22,7 +22,5 @@ const MyTextInput = ({ label, ...props }: Props) => {
       </>
    );
 };
-
-export default MyTextInput;
 
 // * en el field viene todo lo que necesito para el input => onChange, value, onBlur
