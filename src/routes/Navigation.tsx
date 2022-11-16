@@ -13,6 +13,7 @@ import {
    FormikYupPage,
    FormikComponents,
    FormikAbstraction,
+   RegisterFormikPage,
 } from "../03-forms/pages";
 
 export const Navigation = () => {
@@ -64,6 +65,15 @@ export const Navigation = () => {
                      </NavLink>
                   </li>
                   <li>
+                     <NavLink
+                        to="/formik-register"
+                        activeClassName="nav-active"
+                        exact
+                     >
+                        Register Formik
+                     </NavLink>
+                  </li>
+                  <li>
                      <NavLink to="/users" activeClassName="nav-active" exact>
                         Users
                      </NavLink>
@@ -88,6 +98,9 @@ export const Navigation = () => {
                </Route>
                <Route path="/formik-abstraction">
                   <FormikAbstraction />
+               </Route>
+               <Route path="/formik-register">
+                  <RegisterFormikPage />
                </Route>
             </Switch>
          </div>
