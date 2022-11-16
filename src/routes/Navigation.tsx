@@ -7,11 +7,13 @@ import {
 
 import logo from "../logo.svg";
 
-import FormikBasicPage from "../03-forms/pages/FormikBasicPage";
-import FormikComponents from "../03-forms/pages/FormikComponents";
-import FormikYupPage from "../03-forms/pages/FormikYupPage";
-import RegisterPage from "../03-forms/pages/RegisterPage";
-import FormikAbstraction from "../03-forms/pages/FormikAbstraction";
+import {
+   RegisterPage,
+   FormikBasicPage,
+   FormikYupPage,
+   FormikComponents,
+   FormikAbstraction,
+} from "../03-forms/pages";
 
 export const Navigation = () => {
    return (
