@@ -2,15 +2,22 @@
    {
       "type": "input",
       "name": "firstName",
-      "placeholder": "Santiago",
-      "label": "First Name",
+      "placeholder": "Ingrese su nombre",
+      "label": "Nombre",
       "value": ""
    },
    {
       "type": "input",
       "name": "lastName",
-      "placeholder": "Zibecchi",
-      "label": "Last Name",
+      "placeholder": "Ingrese su apellido",
+      "label": "Apellido",
+      "value": ""
+   },
+   {
+      "type": "email",
+      "name": "email",
+      "placeholder": "Ingrese su correo",
+      "label": "Email",
       "value": ""
    }
 ]
