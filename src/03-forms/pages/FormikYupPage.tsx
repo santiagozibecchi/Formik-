@@ -10,7 +10,7 @@ import "../styles/styles.css";
 
 // * getFieldProps: Esta colocando por detras el name, onChange y onBlur
 
-const FormikYupPage = () => {
+export const FormikYupPage = () => {
    const {
       // handleChange,
       // values,
@@ -66,5 +66,3 @@ const FormikYupPage = () => {
       </div>
    );
 };
-
-export default FormikYupPage;

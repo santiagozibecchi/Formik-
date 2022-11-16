@@ -10,7 +10,7 @@ import "../styles/styles.css";
 
 // * getFieldProps: Esta colocando por detras el name, onChange y onBlur
 
-const FormikAbstraction = () => {
+export const FormikAbstraction = () => {
    return (
       <div>
          <h1>Formik Abstraction</h1>
@@ -80,5 +80,3 @@ const FormikAbstraction = () => {
       </div>
    );
 };
-
-export default FormikAbstraction;

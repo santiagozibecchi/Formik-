@@ -2,7 +2,7 @@ import { FormEvent } from "react";
 import { useForm } from "../hooks/useForm";
 import "../styles/styles.css";
 
-const RegisterPage = () => {
+export const RegisterPage = () => {
    const {
       formData,
       onChange,
@@ -82,5 +82,3 @@ const RegisterPage = () => {
       </div>
    );
 };
-
-export default RegisterPage;

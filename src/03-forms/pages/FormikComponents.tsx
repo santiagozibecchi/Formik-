@@ -4,7 +4,7 @@ import "../styles/styles.css";
 
 // * getFieldProps: Esta colocando por detras el name, onChange y onBlur
 
-const FormikComponents = () => {
+export const FormikComponents = () => {
    return (
       <div>
          <h1>Formik Components</h1>
@@ -76,5 +76,3 @@ const FormikComponents = () => {
       </div>
    );
 };
-
-export default FormikComponents;
