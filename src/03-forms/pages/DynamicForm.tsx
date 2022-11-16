@@ -1,12 +1,34 @@
 import { Formik, Form } from "formik";
 import { MySelect, MyTextInput } from "../components";
+import * as Yup from "yup";
 import formJson from "../data/custom-form.json";
 
 const initialValues: { [key: string]: any } = {};
+const requiredFeilds: { [key: string]: any } = {};
 
 for (const input of formJson) {
    initialValues[input.name] = input.value;
+
+   //    console.log({ initialValues });
+
+   if (!input.validations) continue;
+
+   // Esquema de validacion para los campos
+   let schema = Yup.string();
+
+   for (const rule of input.validations) {
+      if (rule.type === "required") {
+         schema = schema.required("Este campo es obligatorio");
+      }
+      // Otras reglas
+   }
+
+   requiredFeilds[input.name] = schema;
+
+   console.log({ requiredFeilds });
 }
+
+const validationSchema = Yup.object({ ...requiredFeilds });
 
 export const DynamicForm = () => {
    return (
@@ -18,6 +40,7 @@ export const DynamicForm = () => {
             onSubmit={(values) => {
                console.log(values);
             }}
+            validationSchema={validationSchema}
          >
             {(formik) => (
                <Form noValidate>
