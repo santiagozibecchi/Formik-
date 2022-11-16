@@ -4,10 +4,13 @@ import {
    Route,
    NavLink,
 } from "react-router-dom";
+
+import logo from "../logo.svg";
+
 import FormikBasicPage from "../03-forms/pages/FormikBasicPage";
+import FormikComponents from "../03-forms/pages/FormikComponents";
 import FormikYupPage from "../03-forms/pages/FormikYupPage";
 import RegisterPage from "../03-forms/pages/RegisterPage";
-import logo from "../logo.svg";
 
 export const Navigation = () => {
    return (
@@ -18,7 +21,7 @@ export const Navigation = () => {
                <ul>
                   <li>
                      <NavLink to="/register" activeClassName="nav-active" exact>
-                        Register Page
+                        Register
                      </NavLink>
                   </li>
                   <li>
@@ -27,7 +30,7 @@ export const Navigation = () => {
                         activeClassName="nav-active"
                         exact
                      >
-                        Formik Basic Page
+                        Formik Basic
                      </NavLink>
                   </li>
                   <li>
@@ -36,7 +39,16 @@ export const Navigation = () => {
                         activeClassName="nav-active"
                         exact
                      >
-                        Formik Yup Page
+                        Formik Yup
+                     </NavLink>
+                  </li>
+                  <li>
+                     <NavLink
+                        to="/formik-components"
+                        activeClassName="nav-active"
+                        exact
+                     >
+                        Formik Components
                      </NavLink>
                   </li>
                   <li>
@@ -58,6 +70,9 @@ export const Navigation = () => {
                </Route>
                <Route path="/formik-yup">
                   <FormikYupPage />
+               </Route>
+               <Route path="/formik-components">
+                  <FormikComponents />
                </Route>
             </Switch>
          </div>
